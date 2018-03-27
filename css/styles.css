@@ -1,7 +1,49 @@
+body {
+  background-color: lightgray;
+}
+
+p {
+  font-size: 3em;
+}
+
 .btn-group, .vowel-check {
   display: none;
+  margin: 0 auto;
+}
+
+.btn-guess {
+  font-size: 18px;
+  width: 60px;
+}
+
+button[type="submit"] {
+  width: 150px;
+  height: 50px;
+  margin-top: 20px;
+}
+.form-control {
+  min-height: 50px;
+  font-size: 16px;
+  max-width: 600px;
+  margin: auto;
+}
+.center-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+ text-align: center;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+}
+
+.form-group {
+  width: 100%;
 }
 
 .vowel-err {
-  border: 1px solid red;
+  border: 3px solid red;
 }

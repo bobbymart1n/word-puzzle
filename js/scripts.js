@@ -73,8 +73,8 @@ $(function() {
       if(winCheck === 0) {
         $("#output").append("<h1>You've WON!!!</h1><br>" + outputString);
       } else if (lossCheck === 0) {
-        $("#output").append("<h1>You Lost</h1><br>" + outputString + "<br><button href='index.html' class='btn btn-danger'>Try Again</button>");
-        $("#userInput")[0].reset();
+        $(".btn-group").detach();
+        $("#output").append("<h1>You're a loser</h1><br><img src='img/loser.png'><br>" + outputString + "<br><a href='index.html'><button class='btn btn-danger'>Try Again</button></a>");
       } else {
         $("#output").append("<h3>Here is your updated clue, time to guess:</h3><br>" + outputString);
       }
