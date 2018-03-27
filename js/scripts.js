@@ -7,21 +7,11 @@ $(function() {
     var userInput = $("#userString").val().trim().toLowerCase();
     var userArray = userInput.split("");
     var userAnswer = userArray.slice();
-    // userAnswer.forEach(function(letter) {
-    //   if(letter === "-") {
-    //     letter = " ";
-    //   }
-    // });
-    // console.log(userAnswer);
-    // userAnswer.join("");
-    // console.log(userAnswer, "HERE");
     for(var i = 0; i < userArray.length; i++) {
       if(userArray[i] === "-") {
         userArray[i] = " ";
         userAnswer[i] = " ";
       }
-      // console.log(userArray, "Here");
-      // console.log(userAnswer);
       for (var j = 0; j < vowels.length; j++) {
         if(userArray[i] === vowels[j]) {
           userArray[i] = "-";
@@ -33,18 +23,30 @@ $(function() {
     $(".btn-group").show();
     var outputString = userArray.join("");
     var outputAnswer = userAnswer.join("");
-    console.log(outputString);
-    console.log(outputAnswer);
-    $("#output").append("<h3>Here is your clue, time to guess:</h3><br>" + outputString + outputAnswer);
+    $("#output").append("<h3>Here is your clue, time to guess:</h3><br>" + outputString);
 
     // Guessing letters
     var guess = "";
     $(".btn-group button").click(function() {
       guess = $(this).val();
-      console.log(guess);
-
-      if(guess !== "a") {
-
+      $(this).remove();
+      $("#output").empty();
+      var count = 0;
+      for(var i = 0; i < userArray.length; i++) {
+        if(userAnswer[i] === guess) {
+          userArray[i] = guess;
+          outputString = userArray.join("");
+        }
+      }
+      userArray.forEach(function(cnt) {
+        if(cnt === "-") {
+          count += 1;
+        }
+      });
+      if(count === 0) {
+        $("#output").append("<h1>You've WON!!</h1><br>" + outputString);
+      } else {
+        $("#output").append("<h3>Here is your updated clue, time to guess:</h3><br>" + outputString);
       }
     });
   });
