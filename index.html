@@ -10,12 +10,22 @@
   </head>
   <body>
     <div class="container">
-      <div class="row">
-        <form class="form-group" id="userInput">
-          <input type="text" id="userString" class="form-control" placeholder="Enter a sentence you want someone to figure out." required>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
+      <form class="form-group" id="userInput">
+        <div class="row">
+          <div class="btn-group">
+            <button type="button" class="btn btn-primary" id="guessA">A</button>
+            <button type="button" class="btn btn-primary" id="guessE">E</button>
+            <button type="button" class="btn btn-primary" id="guessI">I</button>
+            <button type="button" class="btn btn-primary" id="guessO">O</button>
+            <button type="button" class="btn btn-primary" id="guessU">U</button>
+            <button type="button" class="btn btn-primary" id="guessY">Y</button>
+          </div>
+        </div>
+        <div class="row" id="stringInput">
+          <input type="text" id="userString" class="form-control" placeholder="Person guessing turn around, enter a sentence you want someone to figure out." required>
+          <button type="submit" id="firstButton" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
       <div class="row">
         <p id="output"></p>
       </div>
